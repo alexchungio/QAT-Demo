@@ -4,6 +4,8 @@ import torch.nn.functional as F
 from torchstat import stat
 from thop import profile
 
+__all__ = ['ResNet50', 'ResNet101', 'ResNet152']
+
 
 class BasicBlock(nn.Module):
     expansion = 1
