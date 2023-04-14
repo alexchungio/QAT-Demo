@@ -22,8 +22,8 @@ if __name__ == "__main__":
     mask_paths = glob.glob(args.out_dir + "/*.bin")
     mask_paths.sort()
 
-    for mask_path in mask_paths[2:]:
-        mask_name = os.path.basename(mask_path)
+    for mask_path in mask_paths:
+        mask_name = os.path.basename(mask_path.replace('FS_', ''))
         img_path = os.path.join(args.img_dir, mask_name.replace('.bin', '.jpg'))
 
         img = cv2.imread(img_path)
