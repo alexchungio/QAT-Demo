@@ -28,8 +28,8 @@ def visualize(image, result, color_map, save_dir=None, weight=0.6):
     c3 = cv2.LUT(result, color_map[:, 2])
     pseudo_img = np.dstack((c3, c2, c1))
 
-    im = cv2.imread(image)
-    vis_result = cv2.addWeighted(im, weight, pseudo_img, 1 - weight, 0)
+    # im = cv2.imread(image)
+    vis_result = cv2.addWeighted(image, weight, pseudo_img, 1 - weight, 0)
 
     if save_dir is not None:
         if not os.path.exists(save_dir):
