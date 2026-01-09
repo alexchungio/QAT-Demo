@@ -51,7 +51,7 @@ if __name__ == "__main__":
     parser.add_argument('--data-dir', type=str,
                         default='/Users/alex/Documents/tda4/ti-processor-sdk-rtos-j721e-evm-07_03_00_07/tidl_j7_02_00_00_07/ti_dl/test/testvecs/input',
                         help='trace directory')
-    parser.add_argument('--model-dir', type=str,
+    parser.add_argument('--models-dir', type=str,
                         default='/Users/alex/Documents/tda4/ti-processor-sdk-rtos-j721e-evm-07_03_00_07/tidl_j7_02_00_00_07/ti_dl/test/testvecs/models/public/onnx',
                         help='trace directory')
     parser.add_argument('--num-value', type=int, default=10, help='number value of output tensor')

@@ -1,16 +1,17 @@
 import os
 import argparse
 import shutil
+import tqdm
 
 parser = argparse.ArgumentParser()
 
-root_path = '/Users/alex/Documents/'
+root_path = '/Volumes/ALEX/bev_val_30_45/'
 
-parser.add_argument('--data-dir', type=str, default=os.path.join(root_path, 'geely/data/bev_val/image'),
+parser.add_argument('--data-dir', type=str, default=os.path.join(root_path, 'bev'),
                     help='image dir')
-parser.add_argument('--output-dir', type=str, default=os.path.join(root_path, 'geely/data/bev_val'),
+parser.add_argument('--output-dir', type=str, default=os.path.join(root_path, 'bev_fold'),
                     help='output dir')
-parser.add_argument('--split-number', type=int, default=800, help='number image per sub dataset')
+parser.add_argument('--split-number', type=int, default=1200, help='number image per sub dataset')
 parser.add_argument('--base-name', type=str, default='sub_img')
 args = parser.parse_args()
 
@@ -22,6 +23,7 @@ def main():
     idx = 0
     for idx_sub, number in enumerate(number_sub_data):
         sub_data_dir = os.path.join(args.output_dir, f'{args.base_name}_{idx_sub}')
+
         os.makedirs(sub_data_dir, exist_ok=True)
         for _ in range(number):
             shutil.copy(os.path.join(args.data_dir, data_list[idx]),
