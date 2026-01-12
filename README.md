@@ -48,5 +48,3 @@ trt-engine-exploer
 
 ## Reference
 • https://github.com/leimao/PyTorch-Quantization-Aware-Training
-
-解析这段代码

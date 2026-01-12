@@ -60,4 +60,3 @@ def fuse_conv_and_bn(conv, bn):
         quant_fusedconv._weight_quantizer = conv._weight_quantizer
 
     return quant_fusedconv
-解析这段代码
